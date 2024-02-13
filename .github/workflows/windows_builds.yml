@@ -48,7 +48,7 @@ jobs:
             bin: "./bin/godot.windows.editor.x86_64.mono.exe"
             build-mono: true
 
-          - name: Template (target=template_release)
+          - name: Template w/ Mono (target=template_release)
             cache-name: windows-template-mono
             build-mono: false
             target: template_release
