@@ -44,7 +44,7 @@ jobs:
             target: editor
             tests: true
             # Skip debug symbols, they're way too big with MSVC.
-            sconsflags: debug_symbols=no vsproj=yes vsproj_gen_only=no windows_subsystem=console
+            sconsflags: debug_symbols=no vsproj=yes vsproj_gen_only=no windows_subsystem=console  module_mono_enabled=yes
             bin: "./bin/godot.windows.editor.x86_64.mono.exe"
             build-mono: true
 
