@@ -47,6 +47,10 @@ jobs:
             sconsflags: debug_symbols=no vsproj=yes vsproj_gen_only=no windows_subsystem=console  module_mono_enabled=yes
             bin: "./bin/godot.windows.editor.x86_64.mono.exe"
             build-mono: true
+            doc-test: true
+            proj-conv: true
+            api-compat: true
+            artifact: true
 
           - name: Template w/ Mono (target=template_release)
             cache-name: windows-template-mono
@@ -95,7 +99,7 @@ jobs:
       - name: Build .NET solutions
         if: ${{ matrix.build-mono }}
         run: |
-          ./modules/mono/build_scripts/build_assemblies.py --godot-output-dir=./bin --godot-platform=linuxbsd
+          ./modules/mono/build_scripts/build_assemblies.py --godot-output-dir=./bin --godot-platform=windows
 
       - name: Prepare artifact
         run: |
